@@ -35,6 +35,7 @@ npm start
 | Name         | Description                                 | Purpose     |
 | ------------ | ------------------------------------------- | ----------- |
 | build        | Build the project in the `./dist` directory | production  |
+| start        | Start Disney's data extraction              | production  |
 | watch        | Watch the project                           | development |
 | watch:run    | Watch and run the project                   | development |
 | watch:node   | Watch changes on the `./dist` folder        | development |
