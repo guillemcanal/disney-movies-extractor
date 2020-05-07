@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -e
+
+# Wait for a given filename to exists before exiting
+# @todo Check that $1 was passed to the script
+while [ ! -f "$1" ]; do sleep 0.1; done

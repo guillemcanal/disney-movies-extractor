@@ -1,0 +1,29 @@
+{
+  "name": "disney-movies-extractor",
+  "version": "1.0.0",
+  "description": "Extract Disney's movies and their cover from Wikipedia",
+  "main": "./dist/extract.js",
+  "scripts": {
+    "build": "NODE_ENV=production parcel build ./src/extract.js --target=node",
+    "start": "npm run build && node ./dist/extract.js",
+    "watch": "npm run npm:watch:parcel",
+    "watch:run": "concurrently npm:watch:parcel npm:watch:node",
+    "watch:node": "./scripts/wait-for ./dist/extract.js && nodemon -e js ./dist/extract.js",
+    "watch:parcel": "parcel watch ./src/extract.js --target=node"
+  },
+  "author": "Guillem CANAL <gcanal@eleven-labs.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^3.0.2",
+    "puppeteer-cluster": "^0.20.0",
+    "puppeteer-extra": "^3.1.9",
+    "puppeteer-extra-plugin-stealth": "^2.4.9",
+    "sanitize-filename": "^1.6.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.3",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-electron-dotenv": "^0.1.0"
+  }
+}
